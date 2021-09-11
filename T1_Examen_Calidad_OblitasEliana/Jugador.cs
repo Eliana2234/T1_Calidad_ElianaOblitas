@@ -8,7 +8,7 @@ namespace T1_Examen_Calidad_OblitasEliana
     public class Jugador
     {
         public String Nombre { get; set; }
-        public String Resultado { get; set; }
+        public String Cartas { get; set; }
     }
 
 }

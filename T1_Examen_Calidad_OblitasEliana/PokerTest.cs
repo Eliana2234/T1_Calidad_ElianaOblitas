@@ -11,22 +11,14 @@ namespace T1_Examen_Calidad_OblitasEliana
         [Test]
         public void Caso01()//Ganador del juego
         {
-            var jugador = new Jugador();
-            jugador.AddCarta(4,"Jose");
-            jugador.AddCarta(3, "Jose");
-            jugador.AddCarta(5, "Jose");
-            jugador.AddCarta(2, "Jose");
-            jugador.AddCarta(1, "Jose");
+            var poker = new Poker();
 
-            jugador.AddCarta(8, "Maria");
-            jugador.AddCarta(6, "Maria");
-            jugador.AddCarta(1, "Maria");
-            jugador.AddCarta(7, "Maria");
-            jugador.AddCarta(9, "Maria");
+            poker.CartasJugador1(new Jugador { Nombre = "Jugador 1", Cartas = "1, 2, 3, 4, 5" });
+            poker.CartasJugador2(new Jugador { Nombre = "Jugador 2", Cartas = "7, 5, 6, 8, 1" });
 
-            var result = MostrarGanador();
+            var result = poker.MostrarGanador();
 
-            Assert.AreEqual("Jose", result.name);
+            Assert.AreEqual("Jugador 1", result);
         }
 
         [Test]
@@ -41,6 +33,7 @@ namespace T1_Examen_Calidad_OblitasEliana
             var result = contarJugadores();
 
             Assert.Throws(typeof(Exception), () => jugador.comprobarJugadores(contador);
+            //Thrown new exception("Hay mas de 6 jugadores");
         }
 
         [Test]
@@ -58,7 +51,7 @@ namespace T1_Examen_Calidad_OblitasEliana
 
             var result = contarJugadores();
 
-            Assert.Throws(typeof(Exception), () => jugador.contarJugadores(contador);
+            Assert.Throws(typeof(Exception), () => jugador.contarJugadores(6);
         }
 
         [Test]
@@ -83,25 +76,19 @@ namespace T1_Examen_Calidad_OblitasEliana
         }
 
         [Test]
-        public void Caso04()//Cartas Iguales
+        public void Caso05()//Cartas Iguales 1 = Cartas iguales y 0 = Cartas diferentes
         {
-            var jugador = new Jugador();
-            jugador.AddCarta(4, "Jose");
-            jugador.AddCarta(3, "Jose");
-            jugador.AddCarta(5, "Jose");
-            jugador.AddCarta(2, "Jose");
-            jugador.AddCarta(1, "Jose");
+            var poker = new Poker();
 
-            jugador.AddCarta(1, "Maria");
-            jugador.AddCarta(4, "Maria");
-            jugador.AddCarta(2, "Maria");
-            jugador.AddCarta(3, "Maria");
-            jugador.AddCarta(5, "Maria");
+            poker.CartasJugador1(new Jugador { Nombre = "Jugador 1", Cartas = "1, 2, 3, 4, 5" });
+            poker.CartasJugador2(new Jugador { Nombre = "Jugador 2", Cartas = "3, 2, 1, 4, 5" });
 
-            var result = comprobarCartas();
+            var result = poker.ComprobarCartas();
+            var poker = new ExceptionTestClass();
 
-            Assert.Throws(typeof(Exception), () => jugador.comprobarCartas(jugador1, jugador2));
-            Assert.AreEqual(, result);
+            Assert.Throws(typeof(Exception), () => jugador.comprobarCartas(0));
+            //Thrown new exception("Las cartas son iguales");
+            Assert.AreEqual("0", result);
         }
     }
 }
