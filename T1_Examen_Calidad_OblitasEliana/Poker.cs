@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace T1_Examen_Calidad_OblitasEliana
 {
-    internal class Poker
+    public class Poker
     {
-        public Poker()
+        public string CombrobarJugadores(int v)
         {
-            public string CombrobarJugadores()
-            {
-                return "I";
-            }
+            return ;
         }
     }
 }
