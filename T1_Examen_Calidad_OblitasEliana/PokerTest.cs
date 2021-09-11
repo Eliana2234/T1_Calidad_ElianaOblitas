@@ -270,6 +270,8 @@ namespace T1_Examen_Calidad_OblitasEliana
             var jugador = new Jugador();
             jugador.AddJugador("Jose");
             jugador.AddJugador("María");
+            jugador.AddJugador("Ivan");
+            jugador.AddJugador("Fabrizio");
 
             var result = contarJugadores();
 
@@ -287,13 +289,7 @@ namespace T1_Examen_Calidad_OblitasEliana
             jugador.AddJugador("Jose");
             jugador.AddJugador("María");
             jugador.AddJugador("Luis");
-            jugador.AddJugador("Isabel");
-            jugador.AddJugador("Fernando");
-            jugador.AddJugador("Ivan");
-            jugador.AddJugador("Fabrizio");
-            jugador.AddJugador("Esteban");
-            jugador.AddJugador("Andres");
-            jugador.AddJugador("Julio");
+
 
             var result = contarJugadores();
 
@@ -302,14 +298,14 @@ namespace T1_Examen_Calidad_OblitasEliana
         }
 
         [Test]
-        public void Caso19()//Ganador del juego
+        public void Caso19()//Empate en el juego
         {
             var poker = new Poker();
 
-            poker.CartasJugador1(new Jugador { Nombre = "Jugador 1", Cartas = "1, 2, 3, 4, 9" });
+            poker.CartasJugador1(new Jugador { Nombre = "Jugador 1", Cartas = "8, 2, 6, 5, 10" });
             poker.CartasJugador2(new Jugador { Nombre = "Jugador 2", Cartas = "1, 2, 3, 4, 5" });
 
-            var result = poker.MostrarGanador();
+            var result = poker.VerificarEmpate();
 
             Assert.AreEqual("Empate", result);
         }
@@ -320,6 +316,7 @@ namespace T1_Examen_Calidad_OblitasEliana
             var poker = new Poker();
 
             poker.CartasJugador1(new Jugador { Nombre = "Jugador 1", Cartas = "1, 2, 3, 4, 5" });
+            poker.CartasJugador2(new Jugador { Nombre = "Jugador 2", Cartas = "3, 2, 9, 4, 8" });
             poker.CartasJugador2(new Jugador { Nombre = "Jugador 2", Cartas = "3, 2, 1, 4, 5" });
 
             var result = poker.ComprobarCartas();
@@ -337,8 +334,8 @@ namespace T1_Examen_Calidad_OblitasEliana
         {
             var poker = new Poker();
 
-            poker.CartasJugador1(new Jugador { Nombre = "Jugador 1", Cartas = "1, 2, 3, 4, 5" });
-            poker.CartasJugador2(new Jugador { Nombre = "Jugador 2", Cartas = "7, 5, 6, 8, 1" });
+            poker.CartasJugador1(new Jugador { Nombre = "Jugador 1", Cartas = "1, 5, 3, 9, 4" });
+            poker.CartasJugador2(new Jugador { Nombre = "Jugador 2", Cartas = "2, 10, 6, 11, 1" });
 
             var result = poker.MostrarGanador();
 
@@ -353,6 +350,10 @@ namespace T1_Examen_Calidad_OblitasEliana
             var jugador = new Jugador();
             jugador.AddJugador("Jose");
             jugador.AddJugador("María");
+            jugador.AddJugador("Ivan");
+            jugador.AddJugador("Hugo");
+            jugador.AddJugador("Luis");
+            jugador.AddJugador("Luisa");
 
             var result = contarJugadores();
 
@@ -367,11 +368,7 @@ namespace T1_Examen_Calidad_OblitasEliana
 
             var jugador = new Jugador();
             jugador.AddJugador("Jose");
-            jugador.AddJugador("María");
-            jugador.AddJugador("Luis");
-            jugador.AddJugador("Isabel");
-            jugador.AddJugador("Fernando");
-            jugador.AddJugador("Ivan");
+
 
             var result = contarJugadores();
 
